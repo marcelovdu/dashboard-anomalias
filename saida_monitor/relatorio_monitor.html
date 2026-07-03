@@ -1,0 +1,2465 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Relatório do Monitor de Anomalias</title>
+  <style>
+    body { font-family: Arial, sans-serif; color: #1f2d3d; margin: 36px; line-height: 1.45; }
+    h1, h2 { color: #1f2d3d; }
+    .grade { display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 12px; }
+    .kpi { border: 1px solid #d5dde5; border-radius: 8px; padding: 12px; background: #f8fafc; }
+    .kpi strong { display: block; font-size: 26px; margin-top: 6px; }
+    table { border-collapse: collapse; width: 100%; margin: 10px 0 24px 0; font-size: 13px; }
+    th, td { border-bottom: 1px solid #d8e0e8; padding: 8px; text-align: left; vertical-align: top; }
+    th { background: #eef3f7; }
+  </style>
+</head>
+<body>
+  <h1>Relatório do Monitor de Anomalias</h1>
+  <p>Gerado em 02/07/2026 10:06:22.</p>
+
+  <div class="grade">
+    <div class="kpi">Janelas processadas<strong>215</strong></div>
+    <div class="kpi">Alertas gerados<strong>102</strong></div>
+    <div class="kpi">Pendências HITL<strong>82</strong></div>
+  </div>
+
+  <h2>Alertas por severidade</h2>
+  <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>severidade</th>
+      <th>quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BAIXA</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <td>ALTA</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>MEDIA</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Alertas por tipo</h2>
+  <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>tipo_alerta</th>
+      <th>quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>MAC_DUPLICADO</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>DRIFT_CYCLE_TIME</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>DRIFT_CYCLE_TIME_ETAPA</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Ultimos alertas</h2>
+  <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>alert_id</th>
+      <th>created_at</th>
+      <th>window_start</th>
+      <th>window_end</th>
+      <th>tipo_alerta</th>
+      <th>severidade</th>
+      <th>line</th>
+      <th>station</th>
+      <th>jig_id</th>
+      <th>model</th>
+      <th>firmware_version</th>
+      <th>failed_step</th>
+      <th>error_code</th>
+      <th>metrica</th>
+      <th>valor_observado</th>
+      <th>limiar</th>
+      <th>evidencia</th>
+      <th>acao_sugerida</th>
+      <th>hitl_required</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3FD5FFB43F91</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>2022-09-14T05:15:06</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>MAC_DUPLICADO</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>seriais_por_mac</td>
+      <td>2.0</td>
+      <td>&gt; 1 serial por MAC</td>
+      <td>MAC AC:5A:14:00:84:56 aparece em 2 seriais: SN100220912082846, SN200220913077580.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>29657A2C930E</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>2022-09-14T05:15:06</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>MAC_DUPLICADO</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>seriais_por_mac</td>
+      <td>2.0</td>
+      <td>&gt; 1 serial por MAC</td>
+      <td>MAC AC:5A:14:76:EF:FF aparece em 2 seriais: SN100220912080687, SN400220913081827.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>D3C47F7A2238</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>2022-09-14T05:15:06</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>MAC_DUPLICADO</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>seriais_por_mac</td>
+      <td>2.0</td>
+      <td>&gt; 1 serial por MAC</td>
+      <td>MAC AC:5A:14:96:41:19 aparece em 2 seriais: SN100220914078211, SN300220913081680.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>28919A9E5963</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>2022-09-14T05:15:06</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>MAC_DUPLICADO</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>seriais_por_mac</td>
+      <td>45.0</td>
+      <td>&gt; 1 serial por MAC</td>
+      <td>MAC AC:5A:14:FF:FF:FF aparece em 45 seriais: SN100220912071340, SN100220912071637, SN100220912071766, SN100220912072138, SN100220912072498.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>AF5F7EA4022E</td>
+      <td>2022-09-14T07:15:06</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>2022-09-14T07:15:06</td>
+      <td>MAC_DUPLICADO</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>seriais_por_mac</td>
+      <td>2.0</td>
+      <td>&gt; 1 serial por MAC</td>
+      <td>MAC AC:5A:14:65:F4:CC aparece em 2 seriais: SN200220914083271, SN300220912077688.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>DB001C294846</td>
+      <td>2022-09-14T07:45:06</td>
+      <td>2022-09-14T06:45:06</td>
+      <td>2022-09-14T07:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8416666666666667</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 84.17%, baseline 93.10%, PPM 158333, seriais 120.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>A9E3B6B4A846</td>
+      <td>2022-09-14T08:00:06</td>
+      <td>2022-09-14T07:00:06</td>
+      <td>2022-09-14T08:00:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>MEDIA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 80.00%, baseline 93.10%, PPM 200000, seriais 110.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>False</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>C6C3D2DBFD8A</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>2022-09-14T10:30:06</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8181818181818182</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 81.82%, baseline 93.10%, PPM 181818, seriais 88.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>7758E4FF25A9</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>2022-09-14T10:30:06</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8113207547169812</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 81.13%, baseline 91.55%, PPM 188679, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>3D433374E07A</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>2022-09-14T10:45:06</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7391304347826086</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 73.91%, baseline 93.10%, PPM 260870, seriais 92.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>C5CB291878A5</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>2022-09-14T10:45:06</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7358490566037735</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 73.58%, baseline 91.55%, PPM 264151, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>59908456E834</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>2022-09-14T10:45:06</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>ERR_MD5</td>
+      <td>taxa_erro_critico</td>
+      <td>0.051075268817204304</td>
+      <td>&gt;= 5.00%, falhas &gt;= 4</td>
+      <td>19 ocorrencias de ERR_MD5 em 372 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>ABBD49896691</td>
+      <td>2022-09-14T12:00:06</td>
+      <td>2022-09-14T11:00:06</td>
+      <td>2022-09-14T12:00:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-300</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8043478260869565</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 80.43%, baseline 91.25%, PPM 195652, seriais 92.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>44D8878DA48C</td>
+      <td>2022-09-14T12:00:06</td>
+      <td>2022-09-14T11:00:06</td>
+      <td>2022-09-14T12:00:06</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>MEDIA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>ERR_NO_SIGNAL</td>
+      <td>taxa_erro_critico</td>
+      <td>0.07105263157894737</td>
+      <td>&gt;= 5.00%, falhas &gt;= 4</td>
+      <td>27 ocorrencias de ERR_NO_SIGNAL em 380 tentativas.</td>
+      <td>Inspecionar cabo, tuner e modelo afetado.</td>
+      <td>False</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>F9E9CCB6488C</td>
+      <td>2022-09-14T12:15:06</td>
+      <td>2022-09-14T11:15:06</td>
+      <td>2022-09-14T12:15:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>MEDIA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-300</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7798165137614679</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 77.98%, baseline 91.25%, PPM 220183, seriais 109.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>False</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>DD95E3714D66</td>
+      <td>2022-09-14T15:45:06</td>
+      <td>2022-09-14T14:45:06</td>
+      <td>2022-09-14T15:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8495575221238938</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 84.96%, baseline 93.10%, PPM 150442, seriais 113.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>CC58C0D63C79</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>2022-09-14T15:15:06</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-300</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7840909090909091</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 78.41%, baseline 91.25%, PPM 215909, seriais 88.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>54443B1815BA</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>2022-09-14T15:15:06</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>ERR_MD5</td>
+      <td>taxa_erro_critico</td>
+      <td>0.05277777777777778</td>
+      <td>&gt;= 5.00%, falhas &gt;= 4</td>
+      <td>19 ocorrencias de ERR_MD5 em 360 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>76EDDC61CEE4</td>
+      <td>2022-09-14T16:30:06</td>
+      <td>2022-09-14T15:30:06</td>
+      <td>2022-09-14T16:30:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>MEDIA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8380952380952381</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 83.81%, baseline 93.10%, PPM 161905, seriais 105.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>False</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>830714B02F3D</td>
+      <td>2022-09-14T16:30:06</td>
+      <td>2022-09-14T15:30:06</td>
+      <td>2022-09-14T16:30:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>MEDIA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-300</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7934782608695652</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 79.35%, baseline 91.25%, PPM 206522, seriais 92.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>False</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>CDFD6CB905FC</td>
+      <td>2022-09-14T16:45:06</td>
+      <td>2022-09-14T15:45:06</td>
+      <td>2022-09-14T16:45:06</td>
+      <td>MAC_DUPLICADO</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>seriais_por_mac</td>
+      <td>2.0</td>
+      <td>&gt; 1 serial por MAC</td>
+      <td>MAC AC:5A:14:94:36:8E aparece em 2 seriais: SN100220914071148, SN200220912078445.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>CED2085FF2B6</td>
+      <td>2022-09-14T17:00:06</td>
+      <td>2022-09-14T16:00:06</td>
+      <td>2022-09-14T17:00:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8301886792452831</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 83.02%, baseline 91.55%, PPM 169811, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>9AB57DF7FFB8</td>
+      <td>2022-09-14T18:00:06</td>
+      <td>2022-09-14T17:00:06</td>
+      <td>2022-09-14T18:00:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8113207547169812</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 81.13%, baseline 91.55%, PPM 188679, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>3FB0D2A89E7C</td>
+      <td>2022-09-14T19:30:06</td>
+      <td>2022-09-14T18:30:06</td>
+      <td>2022-09-14T19:30:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8070175438596491</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 80.70%, baseline 91.55%, PPM 192982, seriais 57.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>0E25F624C4E1</td>
+      <td>2022-09-14T19:45:06</td>
+      <td>2022-09-14T18:45:06</td>
+      <td>2022-09-14T19:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>MEDIA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8166666666666667</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 81.67%, baseline 91.55%, PPM 183333, seriais 60.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>False</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+    <tr>
+      <td>87D685FA388D</td>
+      <td>2022-09-14T21:00:06</td>
+      <td>2022-09-14T20:00:06</td>
+      <td>2022-09-14T21:00:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7647058823529411</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 76.47%, baseline 91.55%, PPM 235294, seriais 51.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>5B689CF71DE8</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>2022-09-14T20:45:06</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.8389830508474576</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 83.90%, baseline 93.10%, PPM 161017, seriais 118.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>DFF195C8B441</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>2022-09-14T20:45:06</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-400</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.76</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 76.00%, baseline 91.55%, PPM 240000, seriais 50.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>FAF99AF707C5</td>
+      <td>2022-09-14T22:15:06</td>
+      <td>2022-09-14T21:15:06</td>
+      <td>2022-09-14T22:15:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>BAIXA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-100</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7878787878787878</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 78.79%, baseline 90.91%, PPM 212121, seriais 66.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>REVISAO_AMBIGUA</td>
+    </tr>
+    <tr>
+      <td>143137DBBF82</td>
+      <td>2022-09-14T22:30:06</td>
+      <td>2022-09-14T21:30:06</td>
+      <td>2022-09-14T22:30:06</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>ALTA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>STB-200</td>
+      <td>v4.1.2</td>
+      <td></td>
+      <td></td>
+      <td>fpy_firmware</td>
+      <td>0.7611940298507462</td>
+      <td>queda &gt;= 8.00% ou PPM &gt;= 180000</td>
+      <td>FPY 76.12%, baseline 93.10%, PPM 238806, seriais 67.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>True</td>
+      <td>ALERTA_CONFIRMADO</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Revisão humana pendente</h2>
+  <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>alert_id</th>
+      <th>timestamp_alerta</th>
+      <th>severidade</th>
+      <th>tipo_alerta</th>
+      <th>evidencia</th>
+      <th>acao_sugerida</th>
+      <th>status_revisao</th>
+      <th>decisao_humana</th>
+      <th>responsavel</th>
+      <th>timestamp_decisao</th>
+      <th>observacao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>17CCD3323D05</td>
+      <td>2022-09-12T18:00:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>8 falhas em 39 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>BB98D34D41D4</td>
+      <td>2022-09-12T18:00:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>15 falhas em 31 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>998FEC065295</td>
+      <td>2022-09-12T18:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 75.95%, baseline 91.25%, PPM 240506, seriais 79.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4BBA07D514A0</td>
+      <td>2022-09-12T18:00:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:FF:FF:FF aparece em 45 seriais: SN100220912071340, SN100220912071637, SN100220912071766, SN100220912072138, SN100220912072498.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2C012F8F5B9B</td>
+      <td>2022-09-12T18:00:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>35 ocorrencias de ERR_DRM em 390 tentativas.</td>
+      <td>Revisar provisionamento de chaves DRM e bloquear liberação até validação.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>0A3F33020B8C</td>
+      <td>2022-09-12T18:15:06</td>
+      <td>ALTA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 76.19%, baseline 91.25%, PPM 238095, seriais 84.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>68C82E2129F8</td>
+      <td>2022-09-12T19:15:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>14 falhas em 32 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>EC96625878B0</td>
+      <td>2022-09-12T19:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 78.85%, baseline 91.55%, PPM 211538, seriais 52.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3F38186531EF</td>
+      <td>2022-09-12T19:30:06</td>
+      <td>ALTA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>12 falhas em 31 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>29F8F286D23D</td>
+      <td>2022-09-12T19:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.40%, baseline 90.91%, PPM 186047, seriais 86.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>EC12416C2240</td>
+      <td>2022-09-12T20:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 80.72%, baseline 91.25%, PPM 192771, seriais 83.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5F0C5F5E33D8</td>
+      <td>2022-09-12T20:45:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>15 falhas em 34 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>8ED5421A4043</td>
+      <td>2022-09-12T20:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 82.61%, baseline 91.25%, PPM 173913, seriais 92.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>E7F8D78BF4DD</td>
+      <td>2022-09-12T21:00:06</td>
+      <td>ALTA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>14 falhas em 31 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DAE776D7CE17</td>
+      <td>2022-09-12T21:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 83.02%, baseline 91.55%, PPM 169811, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AE623D380021</td>
+      <td>2022-09-12T21:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 84.27%, baseline 93.10%, PPM 157303, seriais 89.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D53363A842BD</td>
+      <td>2022-09-12T21:15:06</td>
+      <td>BAIXA</td>
+      <td>DRIFT_CYCLE_TIME</td>
+      <td>P95 total 297.9s contra baseline 233.4s.</td>
+      <td>Investigar gargalo de ciclo e correlacionar com falhas ou paradas.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>8C00AA1F8EB3</td>
+      <td>2022-09-12T22:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.69%, baseline 91.25%, PPM 183099, seriais 71.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>99D32560D3C5</td>
+      <td>2022-09-12T22:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 83.05%, baseline 91.55%, PPM 169492, seriais 59.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>66A6420300A2</td>
+      <td>2022-09-12T22:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 85.00%, baseline 93.10%, PPM 150000, seriais 80.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>66083448114E</td>
+      <td>2022-09-12T22:30:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>10 ocorrencias de ERR_MD5 em 185 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A98918C51308</td>
+      <td>2022-09-13T06:00:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:FF:FF:FF aparece em 45 seriais: SN100220912071340, SN100220912071637, SN100220912071766, SN100220912072138, SN100220912072498.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>460C636F106D</td>
+      <td>2022-09-13T06:15:06</td>
+      <td>BAIXA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>4 ocorrencias de ERR_GLITCH em 78 tentativas.</td>
+      <td>Acompanhar recorrência; tratar como ruído se isolado.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>1B48AC90C269</td>
+      <td>2022-09-13T07:45:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:00:84:56 aparece em 2 seriais: SN100220912082846, SN200220913077580.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FBC559F56ADA</td>
+      <td>2022-09-13T08:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 84.80%, baseline 93.10%, PPM 152000, seriais 125.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9DD3F66675F9</td>
+      <td>2022-09-13T09:15:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>7 falhas em 30 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>04A32309B552</td>
+      <td>2022-09-13T09:15:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>5 falhas em 31 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>142BC155F4FC</td>
+      <td>2022-09-13T09:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 82.50%, baseline 90.91%, PPM 175000, seriais 120.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>04CD6BA30A1C</td>
+      <td>2022-09-13T09:15:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>23 ocorrencias de ERR_AUTH em 384 tentativas.</td>
+      <td>Renovar ou validar API key antes de continuar o lote.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>C15F0B5CD2B8</td>
+      <td>2022-09-13T09:30:06</td>
+      <td>ALTA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>14 falhas em 31 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>B2F5F84D9303</td>
+      <td>2022-09-13T09:30:06</td>
+      <td>ALTA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>16 falhas em 34 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>08D7B91863C3</td>
+      <td>2022-09-13T09:30:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>15 falhas em 30 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A4CDF3BB68E3</td>
+      <td>2022-09-13T09:30:06</td>
+      <td>ALTA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 74.22%, baseline 90.91%, PPM 257812, seriais 128.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>C65E8FAE9989</td>
+      <td>2022-09-13T09:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 75.29%, baseline 91.25%, PPM 247059, seriais 85.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D08AE53951EA</td>
+      <td>2022-09-13T09:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 82.76%, baseline 91.55%, PPM 172414, seriais 58.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>E43896B4549D</td>
+      <td>2022-09-13T09:45:06</td>
+      <td>ALTA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 67.74%, baseline 91.25%, PPM 322581, seriais 93.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>71B78C4BFFD9</td>
+      <td>2022-09-13T10:15:06</td>
+      <td>ALTA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>34 falhas em 40 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>491511DD9BC9</td>
+      <td>2022-09-13T10:30:06</td>
+      <td>BAIXA</td>
+      <td>DRIFT_CYCLE_TIME</td>
+      <td>P95 total 297.4s contra baseline 234.0s.</td>
+      <td>Investigar gargalo de ciclo e correlacionar com falhas ou paradas.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A171D5C57E4A</td>
+      <td>2022-09-13T10:45:06</td>
+      <td>BAIXA</td>
+      <td>DRIFT_CYCLE_TIME_ETAPA</td>
+      <td>P95 de wifi_cal_cycle_s em 43.9s contra baseline 34.0s.</td>
+      <td>Inspecionar etapa com aumento de tempo de ciclo.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>C4D5B3117280</td>
+      <td>2022-09-13T11:00:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>11 falhas em 33 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>44B526B079A7</td>
+      <td>2022-09-13T13:00:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>18 falhas em 31 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A4D80B82FD01</td>
+      <td>2022-09-13T13:15:06</td>
+      <td>ALTA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>13 falhas em 30 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2F57CFFAE683</td>
+      <td>2022-09-13T14:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 83.49%, baseline 93.10%, PPM 165138, seriais 109.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9454B39F1EDB</td>
+      <td>2022-09-13T15:45:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:76:EF:FF aparece em 2 seriais: SN100220912080687, SN400220913081827.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A3F4DC165E5C</td>
+      <td>2022-09-13T17:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.48%, baseline 90.91%, PPM 185185, seriais 81.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CBACC364D652</td>
+      <td>2022-09-13T17:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 82.00%, baseline 91.55%, PPM 180000, seriais 50.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>75DE0E95B3D8</td>
+      <td>2022-09-13T17:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 80.58%, baseline 91.25%, PPM 194175, seriais 103.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5D77BCA2C6A4</td>
+      <td>2022-09-13T19:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.74%, baseline 90.91%, PPM 182609, seriais 115.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>8E92F7F846D1</td>
+      <td>2022-09-13T19:30:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>18 ocorrencias de ERR_MD5 em 357 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>14F588845021</td>
+      <td>2022-09-13T20:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.93%, baseline 93.10%, PPM 180723, seriais 83.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>EBE2E1330C35</td>
+      <td>2022-09-13T20:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 74.51%, baseline 91.55%, PPM 254902, seriais 51.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>38FF4A1AB236</td>
+      <td>2022-09-13T20:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 82.86%, baseline 90.91%, PPM 171429, seriais 105.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>6F7B22828ADB</td>
+      <td>2022-09-13T20:15:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>19 ocorrencias de ERR_MD5 em 337 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FB071CA47DCE</td>
+      <td>2022-09-13T20:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 82.93%, baseline 91.25%, PPM 170732, seriais 82.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>B338E1EE23B2</td>
+      <td>2022-09-13T21:00:06</td>
+      <td>BAIXA</td>
+      <td>FALHA_SISTEMATICA_JIG_ETAPA</td>
+      <td>15 falhas em 30 tentativas no jig.</td>
+      <td>Parar ou isolar o jig e abrir manutenção se a recorrência persistir.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D194B6B2C7B7</td>
+      <td>2022-09-13T21:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 85.00%, baseline 93.10%, PPM 150000, seriais 100.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9FC44A904643</td>
+      <td>2022-09-13T22:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.48%, baseline 91.55%, PPM 185185, seriais 54.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>566C48822F56</td>
+      <td>2022-09-13T22:15:06</td>
+      <td>BAIXA</td>
+      <td>DRIFT_CYCLE_TIME</td>
+      <td>P95 total 304.6s contra baseline 233.4s.</td>
+      <td>Investigar gargalo de ciclo e correlacionar com falhas ou paradas.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3FD5FFB43F91</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:00:84:56 aparece em 2 seriais: SN100220912082846, SN200220913077580.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>29657A2C930E</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:76:EF:FF aparece em 2 seriais: SN100220912080687, SN400220913081827.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D3C47F7A2238</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:96:41:19 aparece em 2 seriais: SN100220914078211, SN300220913081680.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>28919A9E5963</td>
+      <td>2022-09-14T06:15:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:FF:FF:FF aparece em 45 seriais: SN100220912071340, SN100220912071637, SN100220912071766, SN100220912072138, SN100220912072498.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AF5F7EA4022E</td>
+      <td>2022-09-14T07:15:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:65:F4:CC aparece em 2 seriais: SN200220914083271, SN300220912077688.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DB001C294846</td>
+      <td>2022-09-14T07:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 84.17%, baseline 93.10%, PPM 158333, seriais 120.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>C6C3D2DBFD8A</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.82%, baseline 93.10%, PPM 181818, seriais 88.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7758E4FF25A9</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.13%, baseline 91.55%, PPM 188679, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3D433374E07A</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>ALTA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 73.91%, baseline 93.10%, PPM 260870, seriais 92.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>C5CB291878A5</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>ALTA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 73.58%, baseline 91.55%, PPM 264151, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>59908456E834</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>19 ocorrencias de ERR_MD5 em 372 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ABBD49896691</td>
+      <td>2022-09-14T12:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 80.43%, baseline 91.25%, PPM 195652, seriais 92.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DD95E3714D66</td>
+      <td>2022-09-14T15:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 84.96%, baseline 93.10%, PPM 150442, seriais 113.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CC58C0D63C79</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 78.41%, baseline 91.25%, PPM 215909, seriais 88.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>54443B1815BA</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>ALTA</td>
+      <td>ERRO_CRITICO_RECORRENTE</td>
+      <td>19 ocorrencias de ERR_MD5 em 360 tentativas.</td>
+      <td>Validar integridade dos artefatos de firmware e checksums.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CDFD6CB905FC</td>
+      <td>2022-09-14T16:45:06</td>
+      <td>ALTA</td>
+      <td>MAC_DUPLICADO</td>
+      <td>MAC AC:5A:14:94:36:8E aparece em 2 seriais: SN100220914071148, SN200220912078445.</td>
+      <td>Bloquear liberação dos seriais e revisar provisionamento de MAC.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CED2085FF2B6</td>
+      <td>2022-09-14T17:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 83.02%, baseline 91.55%, PPM 169811, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9AB57DF7FFB8</td>
+      <td>2022-09-14T18:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 81.13%, baseline 91.55%, PPM 188679, seriais 53.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3FB0D2A89E7C</td>
+      <td>2022-09-14T19:30:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 80.70%, baseline 91.55%, PPM 192982, seriais 57.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>87D685FA388D</td>
+      <td>2022-09-14T21:00:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 76.47%, baseline 91.55%, PPM 235294, seriais 51.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5B689CF71DE8</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 83.90%, baseline 93.10%, PPM 161017, seriais 118.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DFF195C8B441</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 76.00%, baseline 91.55%, PPM 240000, seriais 50.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FAF99AF707C5</td>
+      <td>2022-09-14T22:15:06</td>
+      <td>BAIXA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 78.79%, baseline 90.91%, PPM 212121, seriais 66.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>143137DBBF82</td>
+      <td>2022-09-14T22:30:06</td>
+      <td>ALTA</td>
+      <td>QUEDA_QUALIDADE_FIRMWARE</td>
+      <td>FPY 76.12%, baseline 93.10%, PPM 238806, seriais 67.</td>
+      <td>Bloquear ou revisar lote de firmware antes de continuar a produção.</td>
+      <td>PENDENTE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Avaliação do monitor</h2>
+  <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metrica</th>
+      <th>valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>precisão</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>recall</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>latência_média_min</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>taxa_falso_alarme</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>observação</td>
+      <td>Gabarito não informado; métricas ficam pendentes.</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Auditoria das janelas</h2>
+  <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>window_start</th>
+      <th>window_end</th>
+      <th>registros</th>
+      <th>falhas</th>
+      <th>taxa_falha</th>
+      <th>paradas_relacionadas</th>
+      <th>candidatos_regras</th>
+      <th>alertas_emitidos</th>
+      <th>revisoes_hitl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022-09-14T10:15:06</td>
+      <td>2022-09-14T11:15:06</td>
+      <td>351</td>
+      <td>30</td>
+      <td>0.08547008547008547</td>
+      <td>2</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T10:30:06</td>
+      <td>2022-09-14T11:30:06</td>
+      <td>357</td>
+      <td>34</td>
+      <td>0.09523809523809523</td>
+      <td>3</td>
+      <td>7</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T10:45:06</td>
+      <td>2022-09-14T11:45:06</td>
+      <td>372</td>
+      <td>55</td>
+      <td>0.1478494623655914</td>
+      <td>3</td>
+      <td>8</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T11:00:06</td>
+      <td>2022-09-14T12:00:06</td>
+      <td>380</td>
+      <td>62</td>
+      <td>0.1631578947368421</td>
+      <td>3</td>
+      <td>9</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T11:15:06</td>
+      <td>2022-09-14T12:15:06</td>
+      <td>394</td>
+      <td>71</td>
+      <td>0.1802030456852792</td>
+      <td>3</td>
+      <td>9</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T11:30:06</td>
+      <td>2022-09-14T12:30:06</td>
+      <td>381</td>
+      <td>74</td>
+      <td>0.1942257217847769</td>
+      <td>2</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T11:45:06</td>
+      <td>2022-09-14T12:45:06</td>
+      <td>383</td>
+      <td>71</td>
+      <td>0.185378590078329</td>
+      <td>1</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T12:00:06</td>
+      <td>2022-09-14T13:00:06</td>
+      <td>402</td>
+      <td>64</td>
+      <td>0.15920398009950248</td>
+      <td>1</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T12:15:06</td>
+      <td>2022-09-14T13:15:06</td>
+      <td>395</td>
+      <td>50</td>
+      <td>0.12658227848101267</td>
+      <td>1</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T12:30:06</td>
+      <td>2022-09-14T13:30:06</td>
+      <td>424</td>
+      <td>43</td>
+      <td>0.10141509433962265</td>
+      <td>1</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T12:45:06</td>
+      <td>2022-09-14T13:45:06</td>
+      <td>407</td>
+      <td>28</td>
+      <td>0.0687960687960688</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T13:00:06</td>
+      <td>2022-09-14T14:00:06</td>
+      <td>366</td>
+      <td>24</td>
+      <td>0.06557377049180328</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T13:15:06</td>
+      <td>2022-09-14T14:15:06</td>
+      <td>368</td>
+      <td>25</td>
+      <td>0.06793478260869565</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T13:30:06</td>
+      <td>2022-09-14T14:30:06</td>
+      <td>354</td>
+      <td>21</td>
+      <td>0.059322033898305086</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T13:45:06</td>
+      <td>2022-09-14T14:45:06</td>
+      <td>366</td>
+      <td>25</td>
+      <td>0.06830601092896176</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T14:00:06</td>
+      <td>2022-09-14T15:00:06</td>
+      <td>378</td>
+      <td>26</td>
+      <td>0.06878306878306878</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T14:15:06</td>
+      <td>2022-09-14T15:15:06</td>
+      <td>385</td>
+      <td>28</td>
+      <td>0.07272727272727272</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T14:30:06</td>
+      <td>2022-09-14T15:30:06</td>
+      <td>367</td>
+      <td>32</td>
+      <td>0.08719346049046321</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T14:45:06</td>
+      <td>2022-09-14T15:45:06</td>
+      <td>366</td>
+      <td>34</td>
+      <td>0.09289617486338798</td>
+      <td>0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T15:00:06</td>
+      <td>2022-09-14T16:00:06</td>
+      <td>372</td>
+      <td>34</td>
+      <td>0.0913978494623656</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T15:15:06</td>
+      <td>2022-09-14T16:15:06</td>
+      <td>360</td>
+      <td>40</td>
+      <td>0.1111111111111111</td>
+      <td>0</td>
+      <td>8</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T15:30:06</td>
+      <td>2022-09-14T16:30:06</td>
+      <td>367</td>
+      <td>41</td>
+      <td>0.11171662125340599</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T15:45:06</td>
+      <td>2022-09-14T16:45:06</td>
+      <td>360</td>
+      <td>40</td>
+      <td>0.1111111111111111</td>
+      <td>0</td>
+      <td>9</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T16:00:06</td>
+      <td>2022-09-14T17:00:06</td>
+      <td>376</td>
+      <td>44</td>
+      <td>0.11702127659574468</td>
+      <td>0</td>
+      <td>9</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T16:15:06</td>
+      <td>2022-09-14T17:15:06</td>
+      <td>391</td>
+      <td>37</td>
+      <td>0.09462915601023018</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T16:30:06</td>
+      <td>2022-09-14T17:30:06</td>
+      <td>393</td>
+      <td>37</td>
+      <td>0.09414758269720101</td>
+      <td>1</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T16:45:06</td>
+      <td>2022-09-14T17:45:06</td>
+      <td>399</td>
+      <td>32</td>
+      <td>0.08020050125313283</td>
+      <td>1</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T17:00:06</td>
+      <td>2022-09-14T18:00:06</td>
+      <td>376</td>
+      <td>32</td>
+      <td>0.0851063829787234</td>
+      <td>1</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T17:15:06</td>
+      <td>2022-09-14T18:15:06</td>
+      <td>365</td>
+      <td>29</td>
+      <td>0.07945205479452055</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T17:30:06</td>
+      <td>2022-09-14T18:30:06</td>
+      <td>362</td>
+      <td>26</td>
+      <td>0.0718232044198895</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T17:45:06</td>
+      <td>2022-09-14T18:45:06</td>
+      <td>348</td>
+      <td>22</td>
+      <td>0.06321839080459771</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T18:00:06</td>
+      <td>2022-09-14T19:00:06</td>
+      <td>347</td>
+      <td>15</td>
+      <td>0.043227665706051875</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T18:15:06</td>
+      <td>2022-09-14T19:15:06</td>
+      <td>334</td>
+      <td>15</td>
+      <td>0.04491017964071856</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T18:30:06</td>
+      <td>2022-09-14T19:30:06</td>
+      <td>342</td>
+      <td>13</td>
+      <td>0.038011695906432746</td>
+      <td>1</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T18:45:06</td>
+      <td>2022-09-14T19:45:06</td>
+      <td>332</td>
+      <td>18</td>
+      <td>0.05421686746987952</td>
+      <td>1</td>
+      <td>7</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T19:00:06</td>
+      <td>2022-09-14T20:00:06</td>
+      <td>323</td>
+      <td>19</td>
+      <td>0.058823529411764705</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T19:15:06</td>
+      <td>2022-09-14T20:15:06</td>
+      <td>331</td>
+      <td>26</td>
+      <td>0.07854984894259819</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T19:30:06</td>
+      <td>2022-09-14T20:30:06</td>
+      <td>328</td>
+      <td>32</td>
+      <td>0.0975609756097561</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T19:45:06</td>
+      <td>2022-09-14T20:45:06</td>
+      <td>339</td>
+      <td>34</td>
+      <td>0.10029498525073746</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T20:00:06</td>
+      <td>2022-09-14T21:00:06</td>
+      <td>365</td>
+      <td>35</td>
+      <td>0.0958904109589041</td>
+      <td>0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T20:15:06</td>
+      <td>2022-09-14T21:15:06</td>
+      <td>359</td>
+      <td>30</td>
+      <td>0.08356545961002786</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T20:30:06</td>
+      <td>2022-09-14T21:30:06</td>
+      <td>355</td>
+      <td>27</td>
+      <td>0.07605633802816901</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T20:45:06</td>
+      <td>2022-09-14T21:45:06</td>
+      <td>349</td>
+      <td>30</td>
+      <td>0.08595988538681948</td>
+      <td>0</td>
+      <td>8</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T21:00:06</td>
+      <td>2022-09-14T22:00:06</td>
+      <td>322</td>
+      <td>26</td>
+      <td>0.08074534161490683</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T21:15:06</td>
+      <td>2022-09-14T22:15:06</td>
+      <td>248</td>
+      <td>24</td>
+      <td>0.0967741935483871</td>
+      <td>0</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T21:30:06</td>
+      <td>2022-09-14T22:30:06</td>
+      <td>165</td>
+      <td>16</td>
+      <td>0.09696969696969697</td>
+      <td>0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T21:45:06</td>
+      <td>2022-09-14T22:45:06</td>
+      <td>83</td>
+      <td>5</td>
+      <td>0.060240963855421686</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T22:00:06</td>
+      <td>2022-09-14T23:00:06</td>
+      <td>21</td>
+      <td>3</td>
+      <td>0.14285714285714285</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T22:15:06</td>
+      <td>2022-09-14T23:15:06</td>
+      <td>18</td>
+      <td>1</td>
+      <td>0.05555555555555555</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022-09-14T22:30:06</td>
+      <td>2022-09-14T23:30:06</td>
+      <td>14</td>
+      <td>1</td>
+      <td>0.07142857142857142</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
