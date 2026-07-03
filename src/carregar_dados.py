@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 
 import pandas as pd
 
@@ -15,3 +15,4 @@ def carregar_planilha(caminho: str | Path) -> tuple[pd.DataFrame, pd.DataFrame, 
     paradas = pd.read_excel(caminho_planilha, sheet_name=ABA_PARADAS)
     dicionario = pd.read_excel(caminho_planilha, sheet_name=ABA_DICIONARIO)
     return gravacoes, paradas, dicionario
+

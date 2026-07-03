@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
@@ -671,3 +671,4 @@ def principal() -> None:
 
 if __name__ == "__main__":
     principal()
+

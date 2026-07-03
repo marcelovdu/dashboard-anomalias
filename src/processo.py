@@ -1,4 +1,4 @@
-BPMN_IMAGEM = "assets/bpmn_setupbox.png"
+﻿BPMN_IMAGEM = "assets/bpmn_setupbox.png"
 
 
 PDD_SECOES = [
@@ -70,3 +70,4 @@ PDD_SECOES = [
         ],
     },
 ]
+
