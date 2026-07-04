@@ -1,4 +1,4 @@
-from base64 import b64encode
+﻿from base64 import b64encode
 from io import BytesIO
 from pathlib import Path
 import textwrap
@@ -405,3 +405,4 @@ def gerar_relatorio_pdf(
     saida = BytesIO()
     paginas[0].save(saida, format="PDF", save_all=True, append_images=paginas[1:])
     return saida.getvalue()
+

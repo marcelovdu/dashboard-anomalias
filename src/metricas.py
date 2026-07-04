@@ -1,4 +1,4 @@
-import pandas as pd
+﻿import pandas as pd
 
 
 def filtrar_falhas(gravacoes: pd.DataFrame) -> pd.DataFrame:
@@ -297,3 +297,4 @@ def montar_resumo_auditoria(gravacoes: pd.DataFrame) -> dict[str, int]:
         "scrap": int((gravacoes["disposition"] == "SCRAP").sum()) if not gravacoes.empty else 0,
         "falhas": int((gravacoes["result"] == "FAIL").sum()) if not gravacoes.empty else 0,
     }
+

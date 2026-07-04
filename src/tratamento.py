@@ -1,4 +1,4 @@
-import pandas as pd
+﻿import pandas as pd
 
 
 COLUNAS_NUMERICAS_FIXAS = [
@@ -32,3 +32,4 @@ def tratar_paradas(paradas: pd.DataFrame) -> pd.DataFrame:
     dados["stop_end"] = pd.to_datetime(dados["stop_end"])
     dados["duration_min"] = pd.to_numeric(dados["duration_min"], errors="coerce")
     return dados
+
