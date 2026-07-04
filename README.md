@@ -38,23 +38,44 @@ A aplicação permite:
 
 ## Como Executar o Dashboard
 
-1. Instale as dependências:
+1. Crie e ative um ambiente virtual, se ainda não existir:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+No Windows:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+2. Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Execute o dashboard:
+3. Execute o dashboard:
 
 ```bash
 python -m streamlit run app.py
 ```
 
+No Linux, se o comando `python` não existir, use:
+
+```bash
+python3 -m streamlit run app.py
+```
+
+
 > No Windows, se o comando `streamlit run app.py` não for reconhecido pelo PowerShell,
 > use `python -m streamlit run app.py`. Isso executa o Streamlit pelo Python em que o
 > pacote foi instalado, sem depender do executável `streamlit` estar no PATH.
 
-3. No navegador, use os filtros laterais para explorar os dados.
+4. No navegador, use os filtros laterais para explorar os dados.
 
 ## Como Executar o Monitor
 
@@ -62,6 +83,12 @@ Execute o monitor sobre a planilha padrão:
 
 ```bash
 python monitor.py --input recording_test_setupbox.xlsx --output saida_monitor
+```
+
+Ou, usando diretamente a venv do projeto:
+
+```bash
+.venv/bin/python monitor.py --input recording_test_setupbox.xlsx --output saida_monitor
 ```
 
 Com uma pasta de logs:
